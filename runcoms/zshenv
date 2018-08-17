@@ -10,25 +10,6 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# Adaptions to Path
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:'/Users/simonsteiger/julia'
-export PATH=$PATH:'/usr/local/opt/llvm/bin'
-
-#Malmo
-export MALMO_XSD_PATH=~/Playground/Malmo-0.30.0-Mac-64bit_withBoost/Schemas
-
-# Conda related:
-. /Users/simonsteiger/anaconda2/etc/profile.d/conda.sh
-
-# Add SSH-Keys on reboot
-# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-#   eval `ssh-agent`
-#     ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-#     fi
-#     export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-#     ssh-add -l -K id_rsa id_rsa_old > /dev/null || ssh-add
-
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stampts section
   user          # Username section

@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='code'
-export VISUAL='code'
+export EDITOR='nano'
+export VISUAL='nano'
 export PAGER='vimpager'
 
 #
