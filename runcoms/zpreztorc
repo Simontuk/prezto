@@ -45,8 +45,8 @@ zstyle ':prezto:load' pmodule \
   'osx' \
   'ssh' \
   'contrib-prompt' \
-  'prompt' 
-  
+  'prompt' \
+  "autosuggestions"
 
 # zstyle ':prezto:load' pmodule \
 #   'environment' \
