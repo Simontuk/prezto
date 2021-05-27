@@ -1,5 +1,12 @@
 export PEARL_ROOT=/Users/simonsteiger/.local/share/pearl
 source /Users/simonsteiger/.local/share/pearl/boot/sh/pearl.sh
+
+export JAVA_OPTS="-DsocksProxyHost=localhost -DsocksProxyPort=7777 -DproxySet=true"
+alias gmailfix="sshuttle -vNHr mcstroeber smtp.gmail.com"
+alias sshutbq="sshuttle -vr bq_ssteiger@appl2.bioquant.uni-heidelberg.de 129.206.243.99"
+alias sshutcr="sshuttle -vNHr curry"
+alias bibigrid="java ${JAVA_OPTS} -jar ~/github/bibigrid/bibigrid-main/target/bibigrid-openstack-2.3.jar"
+export PATH=/Users/simonsteiger/.nimble/bin:$PATH
 #
 # Executes commands at the start of an interactive session.
 #
@@ -50,3 +57,53 @@ eval $(thefuck --alias)
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+
+# Chef
+#eval "$(chef shell-init zsh)"
+#eval "$(chef shell-init zsh)"
+#export PATH="/opt/chef-workstation/bin:/Users/simonsteiger/.chefdk/gem/ruby/2.7.0/bin:/opt/chef-workstation/embedded/bin:/opt/chef-workstation/bin:/Users/simonsteiger/.chefdk/gem/ruby/2.7.0/bin:/opt/chef-workstation/embedded/bin:/opt/chef-workstation/bin:/Users/simonsteiger/.chefdk/gem/ruby/2.7.0/bin:/opt/chef-workstation/embedded/bin:/usr/local/opt/gettext/bin:/Users/simonsteiger/.nimble/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/MacGPG2/bin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/Users/simonsteiger/miniconda3/condabin:/Users/simonsteiger/bin:/Users/simonsteiger/julia:/usr/local/opt/llvm/bin:/Users/simonsteiger/.config/pearl/bin:/Users/simonsteiger/.config/pearl/var/pearl/cmd/bin:/Users/simonsteiger/.rvm/bin:/opt/chef-workstation/gitbin:/opt/chef-workstation/gitbin:/opt/chef-workstation/gitbin"
+#export GEM_ROOT="/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0"
+#export GEM_HOME="/Users/simonsteiger/.chefdk/gem/ruby/2.7.0"
+#export GEM_PATH="/Users/simonsteiger/.chefdk/gem/ruby/2.7.0:/opt/chef-workstation/embedded/lib/ruby/gems/2.7.0"
+#function _chef() {
+#
+#  local -a _1st_arguments
+#  _1st_arguments=(
+#      'exec:Runs the command in context of the embedded ruby'
+#      'env:Prints environment variables used by Chef Workstation'
+#      'gem:Runs the `gem` command in context of the embedded Ruby'
+#      'generate:Generate a new repository, cookbook, or other component'
+#      'shell-init:Initialize your shell to use Chef Workstation as your primary Ruby'
+#      'install:Install cookbooks from a Policyfile and generate a locked cookbook set'
+#      'update:Updates a Policyfile.lock.json with latest run_list and cookbooks'
+#      'push:Push a local policy lock to a policy group on the Chef Infra Server'
+#      'push-archive:Push a policy archive to a policy group on the Chef Infra Server'
+#      'show-policy:Show policyfile objects on the Chef Infra Server'
+#      'diff:Generate an itemized diff of two Policyfile lock documents'
+#      'export:Export a policy lock as a Chef Infra Zero code repo'
+#      'clean-policy-revisions:Delete unused policy revisions on the Chef Infra Server'
+#      'clean-policy-cookbooks:Delete unused policyfile cookbooks on the Chef Infra Server'
+#      'delete-policy-group:Delete a policy group on the Chef Infra Server'
+#      'delete-policy:Delete all revisions of a policy on the Chef Infra Server'
+#      'undelete:Undo a delete command'
+#      'describe-cookbook:Prints cookbook checksum information used for cookbook identifier'
+#      'provision:Provision VMs and clusters via cookbook'
+#    )
+
+#  _arguments \
+#    '(-v --version)'{-v,--version}'[version information]' \
+#    '*:: :->subcmds' && return 0
+#
+#  if (( CURRENT == 1 )); then
+#    _describe -t commands "chef subcommand" _1st_arguments
+#    return
+#  fi
+#}
+
+#compdef _chef chef
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
